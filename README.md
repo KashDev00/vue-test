@@ -11,10 +11,21 @@ This template should help get you started developing with Vue 3 and TypeScript i
 
 ### Running With Nginx
 This simulates the behaviour with our reverse proxy servers on dev and prod 
+```shell
+#install dependencies
+sudo apt update
+sudo apt install nginx
+sudo apt install docker
 
-Open WSL and execute the `init.sh` script this will install docker and nginx into wsl. Also applies the Nginx configuration in the file `default`.
+#start services
+sudo service docker start
+sudo service nginx start
 
-After that execute `buildAndDeploy.sh`, this would build the container and deploy application on the port `6003`
+#apply nginx config
+sudo cp default /etc/nginx/sites-enabled
+sudo service nginx restart
+
+```
 
 The application would be accessible through http://localhost:6003.
 
