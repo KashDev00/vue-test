@@ -25,6 +25,9 @@ sudo service nginx start
 sudo cp default /etc/nginx/sites-enabled
 sudo service nginx restart
 
+#build and run container
+docker build -t vue:test .
+docker run --rm -it -p 6003:6003 vue:test
 ```
 
 The application would be accessible through http://localhost:6003.
